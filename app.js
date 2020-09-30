@@ -15,10 +15,11 @@ async function main() {
   let usuarios = new Table(dadosProcessados);
 
   let html = await HtmlParser.Parse(usuarios);
+  let now = Date.now()
 
-  escritor.Write(Date.now() + ".html", html);
+  escritor.Write(now + ".html", html);
 
-  PDFWriter.WriterPDF(Date.now() + ".PDF", html);
+  PDFWriter.WriterPDF(now + ".PDF", html);
 
 }
 
